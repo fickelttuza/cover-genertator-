@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoverForge Pro | AI Art Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><i class="fas fa-palette"></i> CoverForge Pro</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#"><i class="fas fa-magic"></i> Generator</a></li>
+                    <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Premium</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="studio-container">
+        <!-- Control Panel -->
+        <aside class="control-panel">
+            <div class="control-section">
+                <h3 class="section-title"><i class="fas fa-robot"></i> Art Style</h3>
+                <div class="style-grid">
+                    <div class="style-preset" data-model="anything-v3" data-preset="anime">
+                        <div class="style-icon"><i class="fas fa-dragon"></i></div>
+                        <div>Anime</div>
+                    </div>
+                    <div class="style-preset" data-model="dreamlike-diffusion" data-preset="digital-art">
+                        <div class="style-icon"><i class="fas fa-paint-brush"></i></div>
+                        <div>Digital Art</div>
+                    </div>
+                    <div class="style-preset" data-model="redshift-diffusion" data-preset="photographic">
+                        <div class="style-icon"><i class="fas fa-camera"></i></div>
+                        <div>Photorealistic</div>
+                    </div>
+                    <div class="style-preset" data-model="openjourney" data-preset="3d-model">
+                        <div class="style-icon"><i class="fas fa-cube"></i></div>
+                        <div>3D Render</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3 class="section-title"><i class="fas fa-sliders-h"></i> Generation Parameters</h3>
+                <div class="slider-control">
+                    <div class="slider-label">
+                        <span>Guidance Scale</span>
+                        <span>7.5</span>
+                    </div>
+                    <input type="range" min="1" max="20" value="7.5" step="0.5" class="slider" id="cfgScale">
+                </div>
+                <div class="slider-control">
+                    <div class="slider-label">
+                        <span>Steps</span>
+                        <span>30</span>
+                    </div>
+                    <input type="range" min="10" max="50" value="30" class="slider" id="steps">
+                </div>
+                <div class="slider-control">
+                    <div class="slider-label">
+                        <span>Size</span>
+                        <span>512x512</span>
+                    </div>
+                    <select id="sizeSelect" class="model-dropdown">
+                        <option value="512x512">512x512</option>
+                        <option value="768x512">768x512 (Landscape)</option>
+                        <option value="512x768">512x768 (Portrait)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="generate-btn" id="generateBtn">
+                <i class="fas fa-wand-magic-sparkles"></i> Generate Art
+            </button>
+        </aside>
+
+        <!-- Generation Area -->
+        <main class="generation-area">
+            <div class="prompt-box">
+                <h3 class="section-title"><i class="fas fa-lightbulb"></i> Prompt</h3>
+                <textarea class="prompt-textarea" id="promptTextarea" placeholder="Describe your vision... Example: A futuristic cyberpunk cityscape at night with neon lights reflecting in rain puddles, highly detailed digital art style, cinematic lighting, trending on ArtStation"></textarea>
+                <div class="prompt-tools">
+                    <button class="prompt-tool-btn enhance-tool" id="enhancePromptBtn">
+                        <i class="fas fa-bolt"></i>
+                        <span>Enhance</span>
+                    </button>
+                    <button class="prompt-tool-btn randomize-tool" id="randomizePromptBtn">
+                        <i class="fas fa-random"></i>
+                        <span>Randomize</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-container">
+                <div class="preview-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Your generated art will appear here</p>
+                </div>
+                <img id="coverPreview" class="generated-image" alt="Generated cover art">
+            </div>
+            
+            <div class="output-actions">
+                <button class="action-btn download-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i>
+                    <span>Download HD</span>
+                </button>
+                <button class="action-btn variations-btn" id="variationsBtn">
+                    <i class="fas fa-copy"></i>
+                    <span>Create Variations</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <p>© 2023 CoverForge Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
